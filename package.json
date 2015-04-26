@@ -1,0 +1,15 @@
+{
+  "name": "answers-watcher",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "juanpabloaj",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^2.2.4",
+    "tutum": "^0.2.2"
+  }
+}
