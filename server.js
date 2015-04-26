@@ -25,7 +25,7 @@ function start_container(){
 var answersRef = firebase.child('answers');
 
 answersRef.on('child_added', function(snapshot){
-  var value = snapshot.val();
-  console.log("Added answers: " + value);
+  var key = snapshot.key();
+  console.log("Added answers: " + key);
   start_container();
 });
