@@ -8,16 +8,19 @@ var firebase = new Firebase(config.firebaseUrl);
 
 function start_container(){
   tutum.get('/container', function(err, res){
-    containers = res.objects;
+    var containers = res.objects;
+    var uuid = null;
+
     for (var i = 0, l = containers.length; i < l; i ++) {
       container = containers[i];
       if ( container.state == 'Stopped' ) {
-
         uuid = container.uuid;
-        tutum.post('/container/' + uuid + '/start', function(err, res){
-        });
-
       }
+    }
+
+    if ( uuid ) {
+      tutum.post('/container/' + uuid + '/start', function(err, res){
+      });
     }
   });
 }
